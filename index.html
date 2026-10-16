@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F1E8D6" />
+    <title>Родословная</title>
+    <script type="module" crossorigin src="./assets/index-ChC1Q1ip.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cq5ckX3N.css">
+  </head>
+  <body>
+    <header class="bar">
+      <div class="brand">
+        <span class="brand-t">Родословная</span>
+        <span class="brand-s"></span>
+      </div>
+      <div class="search">
+        <input id="q" type="search" placeholder="Найти человека…" autocomplete="off" aria-label="Найти человека" />
+        <ul id="q-res" class="search-res" role="listbox" hidden></ul>
+      </div>
+      <button id="legend-btn" class="ghost" aria-expanded="false" aria-controls="legend">Обозначения</button>
+      <button id="admin-btn" class="ghost" hidden title="Разбор дополнений">Админка</button>
+      <button id="theme-btn" class="ghost icon" aria-label="Сменить тему" title="Сменить тему">◐</button>
+      <button id="user-btn" class="ghost user" title="Выйти"><span id="user-name"></span><span aria-hidden="true">⎋</span></button>
+    </header>
+
+    <section id="login" class="login" hidden>
+      <form class="login-card" autocomplete="on">
+        <p class="eyebrow">Семейный архив</p>
+        <h1>Родословная</h1>
+        <p class="login-s">Семейное древо</p>
+        <label>Логин<input name="login" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+        <label>Пароль<input name="password" type="password" autocomplete="current-password" required></label>
+        <p class="login-err" role="alert" hidden></p>
+        <button type="submit" class="primary">Войти</button>
+        <p class="login-note">Логин и пароль вам выдал составитель древа. Если забыли — напишите ему.</p>
+      </form>
+    </section>
+    <div id="legend" class="legend" hidden>
+      <span class="chip ok"><i></i>по документу</span>
+      <span class="chip known"><i></i>подтверждено семьёй</span>
+      <span class="chip maybe"><i></i>вероятно, нужна проверка</span>
+      <span class="chip oral"><i></i>со слов семьи</span>
+      <span class="chip weak"><i></i>слабая зацепка</span>
+      <span class="legend-lines">
+        <svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" class="ln ok" /></svg>связь подтверждена
+        <svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" class="ln maybe" /></svg>вероятная
+        <svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" class="ln weak" /></svg>предположение (бледнее)
+      </span>
+      <span class="legend-branches"></span>
+    </div>
+
+    <main id="stage" class="stage" aria-label="Древо: перетаскивайте мышью или пальцем, колесо — масштаб">
+      <div id="world" class="world"></div>
+    </main>
+
+    <nav class="zoom" aria-label="Масштаб">
+      <button data-z="in" aria-label="Приблизить">+</button>
+      <button data-z="out" aria-label="Отдалить">−</button>
+      <button data-z="fit" aria-label="Показать всё древо" title="Показать всё">⤢</button>
+      <button data-z="home" aria-label="К своей карточке" title="Ко мне">◎</button>
+    </nav>
+
+    <section id="profile" class="profile" hidden></section>
+    <dialog id="lightbox" class="lightbox"></dialog>
+    <dialog id="contrib" class="contrib"></dialog>
+    <div id="toast" class="toast" role="status" hidden></div>
+
+  </body>
+</html>
